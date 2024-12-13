@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="font-['Inter'] bg-[#F3F3F3] px-3">
+  <body class="font-['Inter'] bg-[#F3F3F3]">
     <!-- Header Section Start-->
-    <header class="max-w-[1280px] mx-auto mt-3 md:mt-5">
+    <header class="max-w-[1280px] mx-auto mt-3 md:mt-5 px-3">
       <!-- Navbar Section Start-->
       <nav class="flex items-center justify-between">
         <div class="logo flex items-center">
@@ -27,10 +27,20 @@
         </div>
 
         <!-- Menu Icon Start (hamburger)-->
-        <button id="bar" class="menu md:hidden" onclick="handleMenu()">
+        <button
+          id="bar"
+          class="menu md:hidden"
+          onclick="toggleMenu()"
+          aria-label="Open navigation menu"
+        >
           <i class="fa-solid fa-bars"></i>
         </button>
-        <button id="xmark" class="menu hidden" onclick="handleMenu()">
+        <button
+          id="xmark"
+          class="menu hidden z-50"
+          onclick="toggleMenu()"
+          aria-label="Close navigation menu"
+        >
           <i class="fa-solid fa-xmark"></i>
         </button>
 
@@ -39,33 +49,33 @@
         <!-- Mobile View Start-->
         <div
           id="navDialog"
-          class="hidden fixed inset-0 mt-20 md:hidden bg-white z-10"
+          class="hidden fixed inset-0 mt-20 py-24 md:hidden bg-white z-10"
         >
-          <div class="flex flex-col mb-5">
-            <ul class="flex flex-col justify-start gap-5">
+          <div>
+            <ul class="flex flex-col items-center gap-14">
               <li
-                class="text-xl font-semibold text-[#0F0E0E] text-opacity-60 hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
+                class="text-xl text-center font-semibold text-[#0F0E0E99] hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
               >
                 <a href="#">Home</a>
               </li>
               <li
-                class="text-xl font-semibold text-[#0F0E0E] text-opacity-60 hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
+                class="text-xl text-center font-semibold text-[#0F0E0E99] hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
               >
                 <a href="#">Shop</a>
               </li>
               <li
-                class="text-xl font-semibold text-[#0F0E0E] text-opacity-60 hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
+                class="text-xl text-center font-semibold text-[#0F0E0E99] hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
               >
                 <a href="#">App Products</a>
               </li>
               <li
-                class="text-xl font-semibold text-[#0F0E0E] text-opacity-60 hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
+                class="text-xl text-center font-semibold text-[#0F0E0E99] hover:text-[#FC6320] hover:bg-[#FC6320] hover:bg-opacity-10 border border-transparent hover:border-[#FC6320] hover:border-opacity-25 mx-4 px-5 py-1 rounded transition-all ease-in-out"
               >
                 <a href="#">Contact</a>
               </li>
             </ul>
           </div>
-          <div class="flex mx-8 gap-5">
+          <div class="flex justify-center mt-12 gap-5">
             <a href="#"> <img class="h-8" src="./images/FB.png" alt="" /></a>
             <a href="#">
               <img class="h-8" src="./images/instagram.png" alt=""
@@ -159,7 +169,7 @@
     <!-- Header Section End -->
 
     <!-- Main section -->
-    <main class="max-w-[1280px] mx-auto my-24">
+    <main class="max-w-[1280px] mx-auto my-24 px-3">
       <!-- Brand Section -->
       <section class="brand-section">
         <div
@@ -646,7 +656,7 @@
 
       <!-- Reviews Section Start -->
       <section class="reviews-section space-y-10 overflow-hidden">
-        <div class="review-container">
+        <div class="title-review-container">
           <div
             class="title-btn-container w-full flex flex-col md:flex-row justify-between"
           >
@@ -889,8 +899,66 @@
       <!-- Reviews Section End -->
     </main>
     <!-- Main section End-->
+
+    <!-- Footer Section Start -->
+    <footer class="w-full bg-white py-[6.25rem] px-[10rem]">
+      <div class="f-container flex flex-col items-center justify-center gap-4">
+        <div class="logo flex justify-center items-center">
+          <h1 class="text-[32px] font-semibold text-[#0F0E0E]">
+            <span class="text-[#FC6320]">e</span>Com
+          </h1>
+          <img src="./images/logo-icon.png" alt="" />
+        </div>
+        <p class="text-lg text-[#0F0E0EB2] font-medium text-center">
+          Save big this Black Friday with unbeatable deals on tech, home
+          essentials, <br />
+          fashion, and more! Limited stock.
+        </p>
+        <div class="w-full mx-auto border border-[#0F0E0E1A] my-4"></div>
+        <div class="flex justify-center">
+          <ul class="flex gap-6 items-center">
+            <li>
+              <a
+                class="nav-item-links text-[16px] font-semibold text-[#0F0E0E99] hover:text-[#0F0E0E] hover:scale-125 transition-transform ease-in-out"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-item-links text-[16px] font-semibold text-[#0F0E0E99] border border-transparent hover:text-[#0F0E0E] hover:scale-125 transition-transform ease-in-out"
+                href="#"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-item-links text-[16px] font-semibold text-[#0F0E0E99] border border-transparent hover:text-[#0F0E0E] hover:scale-125 transition-transform ease-in-out"
+                href="#"
+                >App Products</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-item-links text-[16px] font-semibold text-[#0F0E0E99] border border-transparent hover:text-[#0F0E0E] hover:scale-125 transition-transform ease-in-out"
+                href="#"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex justify-center gap-6 mt-4">
+          <a href="#"> <img class="h-6" src="./images/FB.png" alt="" /></a>
+          <a href="#">
+            <img class="h-6" src="./images/instagram.png" alt=""
+          /></a>
+          <a href="#"> <img class="h-6" src="./images/x.png" alt="" /></a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Javascript -->
     <script src="script.js"></script>
   </body>
-
-  <!-- Javascript -->
 </html>
